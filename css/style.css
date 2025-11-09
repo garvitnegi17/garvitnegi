@@ -66,3 +66,38 @@ p {
 #folderIcon {
     cursor: pointer;
 }
+
+.navbar-folder {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-folder svg {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-folder .cross-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-folder.active svg {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.navbar-folder.active .cross-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
