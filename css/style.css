@@ -74,6 +74,11 @@ p {
     justify-content: center;
 }
 
+.navbar-folder svg,
+.navbar-folder .cross-icon {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
 .navbar-folder svg {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
