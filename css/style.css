@@ -78,6 +78,17 @@ p {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.navbar-folder:hover svg {
+    stroke: #ffd700;
+    transform: scale(1.2);
+}
+
+.navbar-folder.active:hover .cross-icon {
+    color: #ffffff;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+
 .navbar-folder .cross-icon {
     position: absolute;
     top: 50%;
