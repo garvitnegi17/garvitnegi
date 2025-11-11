@@ -156,7 +156,7 @@ p {
 }
 
 .line2 {
-    font-size: clamp(1.2rem, 9vw, 3.5rem);
+    font-size: clamp(1rem, 8vw, 3rem);
     white-space: nowrap;
     overflow: hidden;
 }
@@ -174,3 +174,10 @@ p {
         margin-top: 80px;     
     }
 }
+
+@media (min-width: 1200px) {
+    .hero-content p {
+        font-size: 2rem; 
+    }
+}
+
