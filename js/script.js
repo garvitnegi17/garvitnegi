@@ -5,9 +5,9 @@ folderIcon.addEventListener('click', () => {
 });
 
 folderIcon.addEventListener('touchstart', () => {
-    folderIcon.classList.add('hover-mobile'); 
+  folderIcon.classList.add('hover-mobile');
 });
 
 folderIcon.addEventListener('touchend', () => {
-    folderIcon.classList.remove('hover-mobile'); 
+  folderIcon.classList.remove('hover-mobile');
 });
