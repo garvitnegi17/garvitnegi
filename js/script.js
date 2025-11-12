@@ -1,13 +1,15 @@
-const folderIcon = document.getElementById('folderIcon');
+document.addEventListener('DOMContentLoaded', () => {
+  const folderIcon = document.getElementById('folderIcon');
 
-folderIcon.addEventListener('click', () => {
-  folderIcon.classList.toggle('active');
-});
+  folderIcon.addEventListener('click', () => {
+    folderIcon.classList.toggle('active');
+  });
 
-folderIcon.addEventListener('touchstart', () => {
-  folderIcon.classList.add('hover-mobile');
-});
+  folderIcon.addEventListener('touchstart', () => {
+    folderIcon.classList.add('hover-mobile');
+  });
 
-folderIcon.addEventListener('touchend', () => {
-  folderIcon.classList.remove('hover-mobile');
+  folderIcon.addEventListener('touchend', () => {
+    folderIcon.classList.remove('hover-mobile');
+  });
 });
