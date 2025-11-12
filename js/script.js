@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('loaded');
   const folderIcon = document.getElementById('folderIcon');
 
   folderIcon.addEventListener('click', () => {
