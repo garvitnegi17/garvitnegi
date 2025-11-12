@@ -7,7 +7,6 @@
 html {
     scroll-behavior: smooth;
     height: 100%;
-    overflow: hidden;
 }
 
 body {
@@ -15,7 +14,6 @@ body {
     font-style: normal;
     background-color: #000000;
     color: #ffffff;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
