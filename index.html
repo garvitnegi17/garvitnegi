@@ -14,6 +14,12 @@
 </head>
 
 <body>
+    <div id="loader">
+        <div class="loader-logo">
+            <img src="images/Frame 1.svg" alt="Logo">
+        </div>
+        <div class="loader-bar"></div>
+    </div>
     <div class="navbar">
         <a href="index.html" class="navbar_name">Garvit Negi</a>
         <div class="navbar-folder" id="folderIcon">
@@ -44,7 +50,7 @@
         </div>
     </section>
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-top">
             <div class="social-icons">
                 <a href="https://github.com/garvitnegi17" target="_blank">
                     <img src="images/github.webp" alt="GitHub">
@@ -56,8 +62,11 @@
                     <img src="images/email-envelope.webp" alt="Email">
                 </a>
             </div>
-            <p>&copy; 2025 Garvit Negi. All rights reserved.</p>
+            <p class="last-updated">
+                LAST UPDATED - <span id="lastUpdated">Loading...</span>
+            </p>
         </div>
+        <p class="copyright">&copy; 2022-2026 Garvit Negi. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>

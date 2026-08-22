@@ -10,7 +10,6 @@ html {
 }
 
 body {
-    opacity: 0;
     transition: opacity 1s ease-in-out;
     font-family: "Lexend Deca", sans-serif;
     font-style: normal;
@@ -59,6 +58,59 @@ p {
 
 ::selection {
     background-color: rgb(65, 61, 122);
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.loader-bar {
+    width: 80px;
+    height: 4px;
+    background-color: gold;
+    animation: loaderBar 1s infinite;
+    border-radius: 2px;
+}
+
+@keyframes loaderBar {
+    0% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .navbar {
@@ -234,6 +286,14 @@ p {
     gap: 0.5rem;
 }
 
+.footer-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
 .footer .social-icons {
     display: flex;
     gap: 1rem;
@@ -248,4 +308,16 @@ p {
 
 .footer p {
     font-size: x-small;
+}
+
+.footer .last-updated {
+    margin: 0;
+    white-space: nowrap;
+    font-size: x-small;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.02rem;
+}
+
+.copyright {
+    font-family: 'Times New Roman', Times, serif;
 }
