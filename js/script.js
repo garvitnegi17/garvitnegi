@@ -62,3 +62,27 @@ async function updateLastCommit() {
 }
 
 updateLastCommit();
+
+// ---------- THEME TOGGLE ----------
+
+const sunBtn = document.getElementById("sunBtn");
+const moonBtn = document.getElementById("moonBtn");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+}
+
+// Light mode
+sunBtn.addEventListener("click", () => {
+    document.body.classList.add("light-mode");
+    localStorage.setItem("theme", "light");
+});
+
+// Dark mode
+moonBtn.addEventListener("click", () => {
+    document.body.classList.remove("light-mode");
+    localStorage.setItem("theme", "dark");
+});

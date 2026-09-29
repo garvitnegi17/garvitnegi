@@ -305,6 +305,89 @@ width: 50px;
     border-bottom: none;
 }
 
+/*----------THEME BUTTONS----------*/
+
+.sun-btn {
+    color: #ffd700 !important;
+}
+
+.moon-btn {
+    color: #ffffff !important;
+}
+
+/* Light mode */
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode .navbar {
+    border-bottom-color: #000000;
+}
+
+body.light-mode .navbar_name {
+    color: #000000;
+}
+
+body.light-mode .hero {
+    color: #000000;
+}
+
+body.light-mode .footer {
+    background-color: #ffffff;
+    color: #000000;
+    border-top-color: #000000;
+}
+
+body.light-mode .highlight {
+    color: gold;
+}
+
+body.light-mode .vertical-div {
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+body.light-mode .vertical-div button {
+    color: #000000;
+    border-bottom-color: #dddddd;
+}
+
+body.light-mode .sun-btn {
+    background-color: #000;
+    color: #ffd700 !important;
+}
+
+body.light-mode .moon-btn {
+    background-color: transparent;
+    color: #000000 !important;
+}
+
+body.light-mode .social-icons img {
+    filter: brightness(0);
+}
+
+/* Dark mode */
+
+body:not(.light-mode) .moon-btn {
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+body:not(.light-mode) .sun-btn {
+    background-color: transparent;
+    color: #ffd700 !important;
+}
+
+/*----------THEME SWITCH ANIMATION----------*/
+
+.vertical-div .sun-btn,
+.vertical-div .moon-btn {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
 /*----------FOOTER----------*/
 
 .footer {
