@@ -368,6 +368,20 @@ body.light-mode .social-icons img {
     filter: brightness(0);
 }
 
+/* folder cross in light mode */
+
+body.light-mode .navbar-folder .cross-icon {
+    color: #000000;
+}
+
+body.light-mode .navbar-folder.active:hover .cross-icon {
+    color: #000000;
+}
+
+body.light-mode .navbar-folder.active.hover-mobile .cross-icon {
+    color: #000000;
+}
+
 /* Dark mode */
 
 body:not(.light-mode) .moon-btn {
