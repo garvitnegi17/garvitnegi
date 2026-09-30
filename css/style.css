@@ -117,8 +117,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     border-bottom: 1px solid #ffffff;
+    position: relative;
+    z-index: 20;
 }
 
 .navbar_name {
@@ -130,10 +132,19 @@ p {
 }
 
 .navbar-folder {
-    position: relative;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #ffffff;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    background-color: #000000;
+    z-index: 10;
 }
 
 .navbar-folder svg,
@@ -171,7 +182,7 @@ p {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     color: white;
-    font-size: 20px;
+    font-size: 26px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -366,6 +377,11 @@ body.light-mode .moon-btn {
 
 body.light-mode .social-icons img {
     filter: brightness(0);
+}
+
+body.light-mode .navbar-folder {
+    background-color: #fff;
+    border-color: #000;
 }
 
 /* folder cross in light mode */
