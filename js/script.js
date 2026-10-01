@@ -29,36 +29,36 @@ document.addEventListener('DOMContentLoaded', () => {
 // Last GitHub commit date and time
 async function updateLastCommit() {
 
-    try {
+  try {
 
-        const response = await fetch(
-            "https://api.github.com/repos/garvitnegi17/garvitnegi/commits?per_page=1"
-        );
+    const response = await fetch(
+      "https://api.github.com/repos/garvitnegi17/garvitnegi/commits?per_page=1"
+    );
 
-        const commits = await response.json();
+    const commits = await response.json();
 
-        const commitDate = new Date(commits[0].commit.author.date);
+    const commitDate = new Date(commits[0].commit.author.date);
 
-        const formattedDate = commitDate.toLocaleString("en-IN", {
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-            timeZone: "Asia/Kolkata"
-        });
+    const formattedDate = commitDate.toLocaleString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Asia/Kolkata"
+    });
 
-        document.getElementById("lastUpdated").innerHTML =
-            formattedDate.replace("am", "AM").replace("pm", "PM") + "&nbsp;IST";
+    document.getElementById("lastUpdated").innerHTML =
+      formattedDate.replace("am", "AM").replace("pm", "PM") + "&nbsp;IST";
 
-    } catch (error) {
+  } catch (error) {
 
-        console.error("Could not fetch latest GitHub commit:", error);
+    console.error("Could not fetch latest GitHub commit:", error);
 
-        document.getElementById("lastUpdated").textContent =
-            "Unavailable";
-    }
+    document.getElementById("lastUpdated").textContent =
+      "Unavailable";
+  }
 }
 
 updateLastCommit();
@@ -72,41 +72,54 @@ const moonBtn = document.getElementById("moonBtn");
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "light") {
-    document.body.classList.add("light-mode");
+  document.body.classList.add("light-mode");
 }
 
 // Light mode
 sunBtn.addEventListener("click", () => {
-    document.body.classList.add("light-mode");
-    localStorage.setItem("theme", "light");
+  document.body.classList.add("light-mode");
+  localStorage.setItem("theme", "light");
 });
 
 // Dark mode
 moonBtn.addEventListener("click", () => {
-    document.body.classList.remove("light-mode");
-    localStorage.setItem("theme", "dark");
+  document.body.classList.remove("light-mode");
+  localStorage.setItem("theme", "dark");
 });
 
 const copyBtn = document.querySelector(".copy-btn");
 
 copyBtn.addEventListener("click", async () => {
-    try {
-        await navigator.clipboard.writeText(window.location.href);
+  try {
+    await navigator.clipboard.writeText(window.location.href);
 
-        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+    copyBtn.innerHTML = '<i class="fas fa-check"></i>';
 
-        const copiedMessage = document.createElement("div");
-        copiedMessage.textContent = "Link copied!";
-        copiedMessage.classList.add("copy-message");
+    const copiedMessage = document.createElement("div");
+    copiedMessage.textContent = "Link copied!";
+    copiedMessage.classList.add("copy-message");
 
-        document.body.appendChild(copiedMessage);
+    document.body.appendChild(copiedMessage);
 
-        setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-link"></i>';
-            copiedMessage.remove();
-        }, 1500);
+    setTimeout(() => {
+      copyBtn.innerHTML = '<i class="fas fa-link"></i>';
+      copiedMessage.remove();
+    }, 1500);
 
-    } catch (error) {
-        console.error("Failed to copy URL:", error);
-    }
+  } catch (error) {
+    console.error("Failed to copy URL:", error);
+  }
+});
+
+const arrowBtn = document.querySelector(".arrow-btn");
+const verticalDiv = document.querySelector(".vertical-div");
+
+arrowBtn.addEventListener("click", () => {
+  verticalDiv.classList.toggle("collapsed");
+
+  if (verticalDiv.classList.contains("collapsed")) {
+    arrowBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+  } else {
+    arrowBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+  }
 });

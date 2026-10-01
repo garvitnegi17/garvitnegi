@@ -289,8 +289,7 @@ p {
     top: 50%;
     transform: translateY(-50%);
     width: 50px;
-    display: flex;
-    flex-direction: column;
+    height: 200px;
     background-color: #000;
     border: 1px solid #fff;
     border-radius: 10px 0 0 10px;
@@ -321,6 +320,7 @@ p {
     background-color: transparent;
     color: #fff;
     cursor: pointer;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .sun-btn {
@@ -328,6 +328,37 @@ p {
 }
 
 .vertical-div button:last-child {
+    border-bottom: none;
+}
+
+.vertical-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 150px;
+    border-bottom: 1px solid #333;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.arrow-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.vertical-div.collapsed .vertical-buttons {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.vertical-div.collapsed .arrow-btn {
+    top: 0;
+    bottom: auto;
+    height: 200px;
     border-bottom: none;
 }
 
@@ -405,6 +436,10 @@ body.light-mode .copy-message {
     border-color: #000;
 }
 
+body.light-mode .vertical-buttons {
+    border-bottom-color: #dddddd;
+}
+
 /* folder cross in light mode */
 
 body.light-mode .navbar-folder .cross-icon {
@@ -445,6 +480,7 @@ body:not(.light-mode) .copy-message {
         background-color 0.4s ease,
         color 0.4s ease;
 }
+
 /*----------FOOTER----------*/
 
 .footer {
