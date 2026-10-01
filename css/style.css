@@ -399,6 +399,12 @@ body.light-mode .navbar-folder {
     border-color: #000;
 }
 
+body.light-mode .copy-message {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+}
+
 /* folder cross in light mode */
 
 body.light-mode .navbar-folder .cross-icon {
@@ -423,6 +429,12 @@ body:not(.light-mode) .moon-btn {
 body:not(.light-mode) .sun-btn {
     background-color: transparent;
     color: #ffd700 !important;
+}
+
+body:not(.light-mode) .copy-message {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
 }
 
 /*----------THEME SWITCH ANIMATION----------*/
