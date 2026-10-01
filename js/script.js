@@ -86,3 +86,27 @@ moonBtn.addEventListener("click", () => {
     document.body.classList.remove("light-mode");
     localStorage.setItem("theme", "dark");
 });
+
+const copyBtn = document.querySelector(".copy-btn");
+
+copyBtn.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(window.location.href);
+
+        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+
+        const copiedMessage = document.createElement("div");
+        copiedMessage.textContent = "Link copied!";
+        copiedMessage.classList.add("copy-message");
+
+        document.body.appendChild(copiedMessage);
+
+        setTimeout(() => {
+            copyBtn.innerHTML = '<i class="fas fa-link"></i>';
+            copiedMessage.remove();
+        }, 1500);
+
+    } catch (error) {
+        console.error("Failed to copy URL:", error);
+    }
+});
