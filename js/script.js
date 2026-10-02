@@ -1,18 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const loader = document.getElementById('loader');
 
-  setTimeout(() => {
-    loader.style.opacity = 0;
-    loader.style.transition = 'opacity 0.5s ease';
+    const loader = document.getElementById('loader');
 
-    setTimeout(() => {
-      loader.style.display = 'none';
-      document.body.style.opacity = 1;
-      document.body.classList.add('loaded');
-    }, 500);
-  }, 500);
+    const isRefresh = performance.getEntriesByType('navigation')[0]?.type === 'reload';
 
-  const folderIcon = document.getElementById('folderIcon');
+    if (isRefresh) {
+
+        loader.style.display = 'none';
+        document.body.style.opacity = 1;
+        document.body.classList.add('loaded');
+
+    } else {
+
+        setTimeout(() => {
+
+            loader.style.opacity = 0;
+            loader.style.transition = 'opacity 0.5s ease';
+
+            setTimeout(() => {
+
+                loader.style.display = 'none';
+                document.body.style.opacity = 1;
+                document.body.classList.add('loaded');
+
+            }, 500);
+
+        }, 500);
+
+    }
+
+    const folderIcon = document.getElementById('folderIcon');
   folderIcon.addEventListener('click', () => {
     folderIcon.classList.toggle('active');
   });
