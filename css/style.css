@@ -539,3 +539,15 @@ body:not(.light-mode) .copy-message {
 .copyright {
     font-family: 'Times New Roman', Times, serif;
 }
+
+html.page-leaving::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #000000;
+    z-index: 999999;
+}
+
+html.saved-light.page-leaving::before {
+    background-color: #ffffff;
+}

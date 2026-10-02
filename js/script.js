@@ -148,5 +148,9 @@ arrowBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("pagehide", () => {
-    document.body.style.visibility = "hidden";
+  document.documentElement.classList.add("page-leaving");
+});
+
+window.addEventListener("pageshow", () => {
+  document.documentElement.classList.remove("page-leaving");
 });
