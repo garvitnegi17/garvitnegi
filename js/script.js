@@ -146,3 +146,7 @@ arrowBtn.addEventListener("click", () => {
     arrowBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
   }
 });
+
+window.addEventListener("pagehide", () => {
+    document.body.style.visibility = "hidden";
+});
