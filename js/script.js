@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   } else {
 
+    loader.style.display = 'flex';
+
     setTimeout(() => {
 
       loader.style.opacity = 0;
