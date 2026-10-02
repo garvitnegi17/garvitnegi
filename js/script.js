@@ -2,23 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loader = document.getElementById('loader');
 
-  const navigationType = performance.getEntriesByType('navigation')[0]?.type;
-  const isRefresh = navigationType === 'reload';
   const navbarName = document.getElementById('navbarName');
 
   navbarName.addEventListener('click', () => {
+
     sessionStorage.setItem('skipLoader', 'true');
+
   });
 
-  if (isRefresh || sessionStorage.getItem('skipLoader') === 'true') {
-
-    loader.style.display = 'none';
-    document.body.style.opacity = 1;
-    document.body.classList.add('loaded');
-
-  } else {
-
-    loader.style.display = 'flex';
+  if (!document.documentElement.classList.contains('skip-loader')) {
 
     setTimeout(() => {
 
@@ -34,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
 
     }, 500);
+
+  } else {
+
+    loader.style.display = 'none';
+    document.body.style.opacity = 1;
+    document.body.classList.add('loaded');
 
   }
 
@@ -100,15 +98,15 @@ if (savedTheme === "light") {
   document.body.classList.add("light-mode");
 }
 
-// Light mode
 sunBtn.addEventListener("click", () => {
   document.body.classList.add("light-mode");
+  document.documentElement.classList.add("saved-light");
   localStorage.setItem("theme", "light");
 });
 
-// Dark mode
 moonBtn.addEventListener("click", () => {
   document.body.classList.remove("light-mode");
+  document.documentElement.classList.remove("saved-light");
   localStorage.setItem("theme", "dark");
 });
 
