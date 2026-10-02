@@ -1,35 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const loader = document.getElementById('loader');
+  const loader = document.getElementById('loader');
 
-    const isRefresh = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+  const navigationType = performance.getEntriesByType('navigation')[0]?.type;
+  const isRefresh = navigationType === 'reload';
+  const navbarName = document.getElementById('navbarName');
 
-    if (isRefresh) {
+  navbarName.addEventListener('click', () => {
+    sessionStorage.setItem('skipLoader', 'true');
+  });
+
+  if (isRefresh || sessionStorage.getItem('skipLoader') === 'true') {
+
+    loader.style.display = 'none';
+    document.body.style.opacity = 1;
+    document.body.classList.add('loaded');
+
+  } else {
+
+    setTimeout(() => {
+
+      loader.style.opacity = 0;
+      loader.style.transition = 'opacity 0.5s ease';
+
+      setTimeout(() => {
 
         loader.style.display = 'none';
         document.body.style.opacity = 1;
         document.body.classList.add('loaded');
 
-    } else {
+      }, 500);
 
-        setTimeout(() => {
+    }, 500);
 
-            loader.style.opacity = 0;
-            loader.style.transition = 'opacity 0.5s ease';
+  }
 
-            setTimeout(() => {
-
-                loader.style.display = 'none';
-                document.body.style.opacity = 1;
-                document.body.classList.add('loaded');
-
-            }, 500);
-
-        }, 500);
-
-    }
-
-    const folderIcon = document.getElementById('folderIcon');
+  const folderIcon = document.getElementById('folderIcon');
   folderIcon.addEventListener('click', () => {
     folderIcon.classList.toggle('active');
   });
