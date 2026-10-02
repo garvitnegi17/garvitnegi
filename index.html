@@ -27,6 +27,11 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+    </script>
     <div id="loader">
         <div class="loader-logo">
             <img src="images/Frame 1.svg" alt="Logo">
