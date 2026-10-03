@@ -154,3 +154,5 @@ window.addEventListener("pagehide", () => {
 window.addEventListener("pageshow", () => {
   document.documentElement.classList.remove("page-leaving");
 });
+
+document.getElementById("currentYear").textContent = new Date().getFullYear();
