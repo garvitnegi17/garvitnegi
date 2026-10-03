@@ -74,6 +74,10 @@ p {
     z-index: 9999;
 }
 
+html.saved-light #loader {
+    background-color: #ffffff;
+}
+
 html:not(.skip-loader) #loader {
     display: flex;
 }
