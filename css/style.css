@@ -160,6 +160,10 @@ html.saved-light body {
     z-index: 10;
 }
 
+.navbar-folder.active {
+    border-radius: 10px 0 0 0;
+}
+
 .folder-panel {
     position: absolute;
     top: 62px;
@@ -168,7 +172,17 @@ html.saved-light body {
     height: calc(100dvh - 136px);
 
     background-color: #000000;
+
+    /* CHANGED — folder shape */
+
+    clip-path: polygon(0% 22%,
+            38% 22%,
+            48% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%);
     border: 1px solid #ffffff;
+    border-top: none;
     border-right: none;
 
     opacity: 0;
