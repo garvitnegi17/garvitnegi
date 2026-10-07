@@ -166,10 +166,10 @@ html.saved-light body {
 
 .folder-panel {
     position: absolute;
-    top: 62px;
+    top: 65px;
     right: 0;
     width: 52vw;
-    height: calc(100dvh - 136px);
+    height: calc(100dvh - 141px);
     background: transparent;
     border: none;
     outline: none;
@@ -194,10 +194,12 @@ html.saved-light body {
 }
 
 .folder-shape path {
-    fill: #000000;
-    stroke: #ffffff;
-    stroke-width: 1;
+    fill: none;
+    stroke: #ffd700;
+    stroke-width: 5px;
     vector-effect: non-scaling-stroke;
+    stroke-linejoin: round;
+    stroke-linecap: butt;
 }
 
 .navbar-folder.active~.folder-panel {
@@ -346,6 +348,7 @@ html.saved-light body {
     position: fixed;
     right: 0;
     top: 50%;
+    z-index: 30;
     transform: translateY(-50%);
     width: 50px;
     height: 200px;
