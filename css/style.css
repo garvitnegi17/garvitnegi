@@ -278,19 +278,19 @@ html.saved-light body {
 }
 
 .profile-picture {
-    width: 280px;
-    height: 450px;
-    overflow: hidden;
-    border-radius: 18px;
+    width: 300px;
+    aspect-ratio: 3 / 4;
     flex-shrink: 0;
+    border: 1px solid #ffd700;
+    border-radius: 18px;
+    background-color: #111111;
 }
-
 .profile-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transform: scale(1) translateX(-25%);
+    transform: none;
 }
 
 .highlight {
