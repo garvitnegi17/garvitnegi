@@ -275,6 +275,10 @@ html.saved-light body {
     display: flex;
     align-items: center;
     gap: 4rem;
+    width: fit-content;
+    max-width: 100%;
+    transform-origin: left center;
+    transition: transform 0.4s ease, gap 0.4s ease;
 }
 
 .profile-picture {
@@ -339,6 +343,11 @@ html.saved-light body {
 
 .hero-content p {
     margin-bottom: 1.5rem;
+}
+
+body:has(.navbar-folder.active) .hero-main {
+    transform: scale(0.76);
+    gap: 2rem;
 }
 
 /*----------RESUME----------*/
