@@ -346,7 +346,7 @@ html.saved-light body {
 }
 
 body:has(.navbar-folder.active) .hero-main {
-    transform: scale(0.76);
+    transform: scale(0.74);
     gap: 2rem;
 }
 
